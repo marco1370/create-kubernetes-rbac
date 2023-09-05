@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: admin-view
+  namespace: zarinpal-v4-demo
+subjects:
+- kind: ServiceAccount
+  name: zarinpal-v4-demo-user
+  namespace: zarinpal-v4-demo
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: zarinpal-v4-demo-admin
